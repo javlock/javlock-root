@@ -22,6 +22,7 @@
 		<dependency.undertow-core.version>2.2.14.Final</dependency.undertow-core.version>
 		<dependency.unboundid-ldapsdk.version>6.0.3</dependency.unboundid-ldapsdk.version>
 
+		<dependency.ormlite.version>5.7</dependency.ormlite.version>
 
 		<spotbugs.version>4.5.0</spotbugs.version>
 
@@ -40,6 +41,17 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>com.j256.ormlite</groupId>
+				<artifactId>ormlite-core</artifactId>
+				<version>${dependency.ormlite.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.j256.ormlite</groupId>
+				<artifactId>ormlite-jdbc</artifactId>
+				<version>${dependency.ormlite.version}</version>
+			</dependency>
+
 			<dependency>
 				<groupId>com.github.spotbugs</groupId>
 				<artifactId>spotbugs-annotations</artifactId>
