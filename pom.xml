@@ -100,7 +100,7 @@
 				<plugin>
 					<groupId>com.github.spotbugs</groupId>
 					<artifactId>spotbugs-maven-plugin</artifactId>
-					<version>${plugin.spotbugs.version}</version>
+					<version>${spotbugs.version}</version>
 				</plugin>
 				<plugin>
 					<artifactId>maven-clean-plugin</artifactId>
