@@ -22,7 +22,7 @@
 		<dependency.undertow-core.version>2.2.14.Final</dependency.undertow-core.version>
 		<dependency.unboundid-ldapsdk.version>6.0.3</dependency.unboundid-ldapsdk.version>
 
-		<dependency.ormlite.version>5.7</dependency.ormlite.version>
+		<dependency.ormlite.version>6.0</dependency.ormlite.version>
 
 		<dependency.spotbugs-annotations.version>4.5.2</dependency.spotbugs-annotations.version>
 		<dependency.spotbugs.version>4.5.0.0</dependency.spotbugs.version>
