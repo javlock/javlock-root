@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.javlock</groupId>
 	<artifactId>javlock-root</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>main-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<properties>
@@ -24,7 +24,9 @@
 
 		<dependency.ormlite.version>5.7</dependency.ormlite.version>
 
-		<spotbugs.version>4.5.0</spotbugs.version>
+		<dependency.spotbugs-annotations.version>4.5.2</dependency.spotbugs-annotations.version>
+		<dependency.spotbugs.version>4.5.0.0</dependency.spotbugs.version>
+		<plugin.spotbugs.version>4.5.0.0</plugin.spotbugs.version>
 
 		<plugin.maven-assembly-plugin.version>3.3.0</plugin.maven-assembly-plugin.version>
 		<plugin.maven-clean-plugin.version>3.1.0</plugin.maven-clean-plugin.version>
@@ -52,16 +54,19 @@
 				<version>${dependency.ormlite.version}</version>
 			</dependency>
 
+			<!-- SECURITY -->
 			<dependency>
 				<groupId>com.github.spotbugs</groupId>
 				<artifactId>spotbugs-annotations</artifactId>
-				<version>${spotbugs.version}</version>
+				<version>${dependency.spotbugs-annotations.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.github.spotbugs</groupId>
 				<artifactId>spotbugs</artifactId>
 				<version>${spotbugs.version}</version>
 			</dependency>
+			<!-- SECURITY -->
+			
 			<dependency>
 				<groupId>org.projectlombok</groupId>
 				<artifactId>lombok</artifactId>
@@ -79,6 +84,7 @@
 				<artifactId>commons-net</artifactId>
 				<version>${dependency.apache-commons-net.version}</version>
 			</dependency>
+			
 			<!-- LOGS -->
 			<dependency>
 				<groupId>org.slf4j</groupId>
@@ -112,7 +118,17 @@
 				<plugin>
 					<groupId>com.github.spotbugs</groupId>
 					<artifactId>spotbugs-maven-plugin</artifactId>
-					<version>${spotbugs.version}</version>
+					<version>${plugin.spotbugs.version}</version>
+					<dependencies>
+						<dependency>
+							<groupId>com.github.spotbugs</groupId>
+							<artifactId>spotbugs</artifactId>
+							<version>${dependency.spotbugs.version}</version>
+						</dependency>
+					</dependencies>
+					<configuration>
+						<failOnError>true</failOnError>
+					</configuration>
 				</plugin>
 				<plugin>
 					<artifactId>maven-clean-plugin</artifactId>
@@ -173,6 +189,4 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-
-
 </project>
